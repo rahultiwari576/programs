@@ -1,18 +1,21 @@
 <?php
-// removing duplicated from array
-//Input: arr = [3, 5, 2, 5, 3, 9]
-//Output: [3, 5]
 
-// declaring a variable  :
+$arrData = [16, 2,5,2,10,4,5,8,16];
 
-$test = [3, 5, 2, 5, 3, 9];
-$unique = [];
-print_r($unique).'<br>';
-foreach($test as $num){
+$out = array();
 
-	$unique[$num] = $num;
-
+foreach ($arrData as $item) {
+    if (isset($out[$item])) {
+        ++$out[$item];
+    }
+    else {
+        $out[$item] = 1;
+    }
 }
-print_r($unique);
+
+foreach ($out as $item => $count) {
+    echo $item."<br />";
+}
+
 
 ?>
