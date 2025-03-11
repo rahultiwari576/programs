@@ -1,0 +1,16 @@
+<?php
+
+
+//your string
+$string = 'i am a programmar';
+
+//find string length
+$len 	= strlen($string);
+
+//loop through it and print it reverse
+for ( $i = $len - 1; $i >=0; $i-- )
+{
+  echo $string[$i];
+}
+
+?>
