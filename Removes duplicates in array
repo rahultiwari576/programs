@@ -1,0 +1,18 @@
+<?php
+// removing duplicated from array
+//Input: arr = [3, 5, 2, 5, 3, 9]
+//Output: [3, 5]
+
+// declaring a variable  :
+
+$test = [3, 5, 2, 5, 3, 9];
+$unique = [];
+print_r($unique).'<br>';
+foreach($test as $num){
+
+	$unique[$num] = $num;
+
+}
+print_r($unique);
+
+?>
