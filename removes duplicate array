@@ -1,0 +1,19 @@
+<?php
+$givenArray = array(16, 2,5,2,10,4,5,8,16);
+
+$duplicateValues = array();
+
+$uniqueValues = array();
+ 
+foreach($givenArray as $val) { 
+    
+    if (!isset( $uniqueValues[$val])) {
+         $uniqueValues[$val] = $val;
+    } else {
+        $duplicateValues[] = $val;
+    }
+  
+}
+print_r($duplicateValues);
+?>
+//output = Array ( [0] => 2 [1] => 5 [2] => 16 )
