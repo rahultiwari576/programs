@@ -1,0 +1,13 @@
+// Online PHP compiler to run PHP program online
+// Print "Try programiz.pro" message
+
+$a = 10;
+$b = 20;
+
+$a = $a+$b;
+echo "first element".$a."<br>";
+$b = $a-$b;
+echo "second element B :".$b."<br>";
+$a = $a-$b;
+echo "First element A :".$a."<br>";
+
