@@ -1,0 +1,57 @@
+<?php
+// fibonacci series 
+// 0,1,1,2,3,5,8,13,21,34,55,89,144;
+        // // STEP -! : Create a simple function
+        
+        // function fibonacci($n){
+            
+        // // STEP-2 : Create first and second variable as it remains same for each numbers
+        // $fibSeries = [0,1];
+        // // STEP-3 : now start the loop to add consecutive numbers in order to generate fibonacci seriers;
+            
+        //     for($i = 2;$i < $n; $i++){// cpounter start from 2 as it already have two elements and less then $n as it starts from 0 and always had increment to counter
+        //     // step- 4 : formulae to create fibonacci
+        //     $fibSeries[$i] = $fibSeries[$i-1] + $fibSeries[$i-2];
+        
+        //     }
+        //     // return the array set of fibonaaci
+        //     return $fibSeries;
+        // }
+        
+        
+        // $n = 10;
+        // $result = fibonacci(10); 
+        // print_r($result);
+        
+        
+// STEP -2 Create recursive function() firsgt to implement the fobonacci
+
+function fibonacci($n){
+    
+    if ($n <= 1) {
+        return $n;
+    } else {
+        // Recursive call: return the sum of the previous two Fibonacci numbers
+        return fibonacci($n - 1) + fibonacci($n - 2);
+    }
+    
+}
+
+// Function to generate the full Fibonacci series
+function generateFibonacciSeries($n) {
+    $fibSeries = [];
+    
+    // Call the recursive fibonacci function for each number in the series
+    for ($i = 0; $i < $n; $i++) {
+        $fibSeries[] = fibonacci($i);
+    }
+    
+    return $fibSeries;
+}
+
+        
+        $n = 10;
+        $result = generateFibonacciSeries(10); 
+        print_r($result);
+
+?>  
