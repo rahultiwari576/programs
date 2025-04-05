@@ -1,0 +1,48 @@
+class Solution {
+
+    /**
+     * @param Integer[] $nums
+     * @param Integer $k
+     * @return NULL
+     */
+    
+    function rotateArray(&$nums, $k) {
+        $n = count($nums);
+        if ($n === 0) return;
+        
+        // Ensure k is within bounds
+        $k = $k % $n;
+        if ($k === 0) return;
+        
+        // Helper function to reverse a portion of the array in place
+        function reverse(&$arr, $start, $end) {
+            while ($start < $end) {
+                $temp = $arr[$start];
+                $arr[$start] = $arr[$end];
+                $arr[$end] = $temp;
+                $start++;
+                $end--;
+            }
+    }
+    //  creating the callable function
+     // Step 1: Reverse the entire array
+    reverse($nums, 0, $n - 1);
+    
+    // Step 2: Reverse the first k elements
+    reverse($nums, 0, $k - 1);
+    
+    // Step 3: Reverse the remaining n-k elements
+    reverse($nums, $k, $n - 1);
+
+    // Example 1
+    $nums1 = [1, 2, 3, 4, 5, 6, 7];
+    $k1 = 3;
+    rotateArray($nums1, $k1);
+    echo "Rotated array (Example 1): " . implode(',', $nums1) . "\n";
+
+    // Example 2
+    $nums2 = [-1, -100, 3, 99];
+    $k2 = 2;
+    rotateArray($nums2, $k2);
+    echo "Rotated array (Example 2): " . implode(',', $nums2) . "\n";
+}
