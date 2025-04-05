@@ -1,0 +1,39 @@
+
+<?php
+
+
+// Example usage
+$array = [5, 11, 7, 3, 9, 12];
+findSecondHighest($array);
+
+
+function findSecondHighest($arr) {
+    $n = count($arr);
+    
+    // If array has less than 2 elements
+    if ($n < 2) {
+        echo "Array should have at least two elements.";
+        return;
+    }
+
+    $highest = $secondHighest = PHP_INT_MIN;
+
+    // Traverse the array
+    for ($i = 0; $i < $n; $i++) {
+        if ($arr[$i] > $highest) {
+            $secondHighest = $highest;
+            $highest = $arr[$i];
+        } elseif ($arr[$i] > $secondHighest && $arr[$i] != $highest) {
+            $secondHighest = $arr[$i];
+        }
+    }
+ 
+    if ($secondHighest == PHP_INT_MIN) {
+        echo "There is no second highest element (all elements might be equal).";
+    } else {
+        echo "Second highest element is: " . $secondHighest;
+    }
+}
+
+
+?>
