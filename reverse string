@@ -1,16 +1,25 @@
 <?php
+// reverse string :
+// STEP -1: create a function reversestring:
 
-
-//your string
-$string = 'i am a programmar';
-
-//find string length
-$len 	= strlen($string);
-
-//loop through it and print it reverse
-for ( $i = $len - 1; $i >=0; $i-- )
-{
-  echo $string[$i];
+function reverseString($n){
+      // step-2:count the number and store in var:
+    $c = strlen($n);
+   $reverse ="";
+      // echo $c;
+      // STEP-2: iterate over ever alpha:
+    for($i=$c-1; $i > =0; $i--){
+        $reverse .= $n[$i];
+        
+    }
+    return $reverse;
 }
+
+  // STEP - :create a string and call function;
+$string = "I LOVE PHP";
+$res = reverseString($string);
+
+echo "Original: $string\n";
+echo "Reversed: $res\n";
 
 ?>
