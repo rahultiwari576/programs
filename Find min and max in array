@@ -1,0 +1,37 @@
+<?php
+//  find the min and max 
+
+// STEP -1 : Create a function for min and max:
+
+function minMax($n){
+    
+    // STEP -2 : check if an array is empty or not :
+    if(empty($n)){
+    
+        return [null,null];
+    }
+    // STEP- 3 : create ideal min and max :
+    $min = $max = $n[0];
+    // step-4 :oiterate the given array :
+    foreach($n as $num){
+        // find the min :
+        if($num < $min){
+            $min = $num;
+        }
+        // find the max:
+        if($num > $max){
+            $max = $num;
+        }
+    }
+    
+    return [$min , $max];
+    
+}
+
+$arr = [11,7,55,99,48,154,236,45,21,78,6,42];
+// The smallest and largest values are extracted into the variables $smallest and $largest.
+list($smallest, $largest) = minMax($arr);
+echo "Smallest element: " . $smallest . "\n";
+echo "Largest element: " . $largest . "\n";
+
+?>
