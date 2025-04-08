@@ -1,35 +1,36 @@
 <?php
+// create a function named as second highest
 
-function findSecondHighest($arr) {
-    $n = count($arr);
-
-    if ($n < 2) {
-        echo "Array must have at least two elements.\n";
-        return null;
-    }
-
+function secondHighest($n){
+    
+    // step -2 : take two variable to store max and 2nd max :
     $first = $second = PHP_INT_MIN;
-
-    for ($i = 0; $i < $n; $i++) {
-        if ($arr[$i] > $first) {
-            $second = $first;
-            $first = $arr[$i];
-        } elseif ($arr[$i] > $second && $arr[$i] != $first) {
-            $second = $arr[$i];
+    // $PHP_INT_MIN is a constant that takes possible minimum number;
+    
+    // STEP-3 : iterates over array :
+    foreach($n as $num){
+        // step-4 : find out the largest :
+        
+        if($num > $first){
+            $second =$first;
+            $first = $num;
+        }
+        // STEP-5 : find the second largest:
+        if($num > $second && $num < $first){
+            $second = $num;
         }
     }
 
-    if ($second == PHP_INT_MIN) {
-        echo "No second highest element found (all elements might be the same).\n";
-        return null;
-    }
+// step-6 : use ternary operator to find if second largest exist or not :
 
-    return $second;
+return $second == PHP_INT_MIN ? null : $second;
+
+    
 }
 
-// Example usage
-$arr = [10, 5, 20, 20, 15];
-$secondHighest = findSecondHighest($arr);
-if ($secondHighest !== null) {
-    echo "Second highest element is: " . $secondHighest . "\n";
-}
+// STEO-7 : give an array and call the function; and store it in a res variable
+$arr = [5,8,7,6,12,44,15,36,78,65,66];
+$res = secondHighest($arr);
+
+print_r($res);
+?>
